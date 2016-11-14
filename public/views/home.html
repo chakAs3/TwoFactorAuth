@@ -6,8 +6,8 @@
        <p>{{ "HOME_TEXT2" | translate }}:</p>
        <ul>
            <li ng-repeat="user in allUsers">
-               {{user.username}} ({{user.firstname}} {{user.lastname}})
-                
+               {{user.username}} ({{user.firstName}} {{user.lastName}})
+               - <a href="#" ng-click="deleteUser(user.id)">Delete</a>
            </li>
        </ul>
        <p>&nbsp;</p>

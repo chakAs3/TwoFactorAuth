@@ -54,8 +54,9 @@ app.controller('MainController', ['$scope','$http',function($scope,$http) {
   // get all users
   $http.get('/api/users')
       .then(function (response) {
-         alert(JSON.stringify(response));
+
          $scope.allUsers = response.data ;
+          
       });
 
 }]);
@@ -153,7 +154,7 @@ app.controller('LoginController', ['$rootScope','$scope','$http','$cookieStore',
 
            $http.get('/api/user',{params: { username: $scope.username,password:$scope.password }})
                .then(function (response) {
-                  alert(JSON.stringify(response));
+                  //alert(JSON.stringify(response));
                    if (response.data.length > 0) {
                       var user = response.data[0]; // only 1 element supposed to be
 
@@ -176,19 +177,7 @@ app.controller('LoginController', ['$rootScope','$scope','$http','$cookieStore',
       // reset login status
       ClearCredentials();
 
-      function sendOneTouch(user){
-        $http.get('/api/onetouch_authy',{params: { authy_id:$rootScope.globals.currentUser.authy_id,email: user.username }})
-            .then(function (response) {
-               alert( " sendOneTouch callback " +JSON.stringify(response));
-               if(response.data.success){
 
-                 $rootScope.globals.currentUser.isvalid = true;
-                 $cookieStore.put('globals', $rootScope.globals);
-                 $location.path('/home');
-               }
-
-            });
-      }
 
 
        function SetCredentials(user) {

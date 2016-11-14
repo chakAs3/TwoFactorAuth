@@ -2,24 +2,24 @@
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
 ### Front-end :
-[AngularJS] :<http://angularjs.org> 1.8.x (bootstrap) 
-### Back-end : 
-[Nodejs] 
-[express] 
-[MySql] even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
+[AngularJS] :<http://angularjs.org> 1.8.x (bootstrap)
+### Back-end :
+[Nodejs]
+[express]
+[MySql] even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database
 ### Automation :
-[Gulp] is my favorite javascript task runner that lets me automate tasks like 
+[Gulp] is my favorite javascript task runner that lets me automate tasks like
 
 * Bundling and minifying libraries and stylesheets.
 * Refreshing browser when i save files restart node server after modifying files.
-* Quickly running unit tests 
+* Quickly running unit tests
 * Running code analysis
 * Less/Sass to CSS compilation , Helped me for multilang especially
 * Copying modified files to an output directory ,i could separate my source folder for public folder , all files on public are  generated from src
- 
 
 
-Here's what the project structure looks like: 
+
+Here's what the project structure looks like:
 * public
 * -- css
 * -- fonts
@@ -48,16 +48,16 @@ Here's what the project structure looks like:
 
 
 
-in case  you have some missing libs you can run ‘npm install‘ to install them, i have set properly package.json:
+In case  you have some missing libs you can run ‘npm install‘ to install them, i have set properly package.json:
 
 
 ```sh
 
-$ npm install 
+$ npm install
 
 ```
 
-i have used bower for installing angularjs libs and other front-end libs 
+i have used bower for installing angularjs libs and other front-end libs
 
 
 Below I've included brief descriptions of the the workflow that have to do with user registration and authentication .
@@ -68,12 +68,12 @@ Below I've included brief descriptions of the the workflow that have to do with 
 # Description :
 
 
-- public  :  contains all front-end files 
+- public  :  contains all front-end files
 - js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
-- config.js : it contains database configuration ( username , password ,database , port ) that should be changed in order to   make the app working 
+- config.js : it contains database configuration ( username , password ,database , port ) that should be changed in order to   make the app working
 - server/routes.js : all the server side api functions and the communication with database
 - server/onetouch.js : to implement OneTouch in Two-Factor Authentication
-- user_database.txt : mysql database export 
+- user_database.txt : mysql database export
 
 
 
@@ -99,15 +99,15 @@ i have added multilang  (AR , EN ) to support right-to-left and left-to-right la
 Sign-up form is created and accessible from login form  
 - Validation is done using Angular  and sanitisation using angular-sanitise module on the front-end to escape rendering no Trusted HTML tag , on the back-end i used sanitize node module .
 - Checking if the user is already existing and show error message
-- Passwords are hashed using ‘crypto’ node module , using a simple algorithm 
-- I create a table named ‘user’  contains all necessary fields for this test you find  user_database.txt  in the root folder 
+- Passwords are hashed using ‘crypto’ node module , using a simple algorithm
+- I create a table named ‘user’  contains all necessary fields for this test you find  user_database.txt  in the root folder
 
 Sign-in form is created and accessible from different part :
-- Validation and sanitisation 
-- Checking username and password using same hash 
+- Validation and sanitisation
+- Checking username and password using same hash
 
 Two-factor Authentication to the sign-in using Authy (https://www.twilio.com/authy)
- automatically after check username and password correct app redirects user to  2FA form 
+ automatically after check username and password correct app redirects user to  2FA form
 with 2 options of Authentication , if Two-factor Authentication not yet enabled for the specific user ,thus will have to send country code , phone number , and email to subscribe to Authy then he will be redirected
 - Authentication via SoftToken from Authy App :  form to perform Token Verification  
 
@@ -115,14 +115,5 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 - Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  , but i’m not able to receive the User Approval or Deny since  my App is not public and accessible online , i have to host it then config my Twilio Authy Account to Set the app URL  .
 
 
-Thank You for the test it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication 
+Thank You for the test it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
 Please let me know if you deployed the app or there is any issue, i would like that you could test it .
-
-
-
-
-
-
-
-
-

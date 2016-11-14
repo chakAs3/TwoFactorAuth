@@ -1,0 +1,66 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.10
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:8889
+-- Generation Time: Nov 14, 2016 at 12:43 AM
+-- Server version: 5.5.42
+-- PHP Version: 7.0.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `jadopado`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(60) NOT NULL,
+  `lastname` varchar(60) NOT NULL,
+  `username` varchar(60) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `authyid` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `password`, `authyid`) VALUES
+(6, 'chak', 'Kooooook', 'ddd', '$2a$10$okCUo5cWGXeRVhAp9C0XdOv016JRkC1TG/9pZqaxnDnAZFJnc8.LG', 0),
+(7, 'Chakir', 'QATAB', 'chakiro', '$2a$10$aOdS8Uh4TJIFwdMdMrLUKO4kXjsWwqiYwE09IA6lObduJTUuK9ply', 0),
+(8, 'Mama', 'Papa', 'mama', '$2a$10$773XvHRULXQwrE/5mNbJ/uZdwMEBWVHxUWOqFxSShkv6Bca.kXlne', 0),
+(9, 'jado', 'pado', 'jado', '$2a$10$8pRDmt6Ki84vZIf./mpInOv6EiBNHaUlFEXEY6WxcBdO8VrTk/9LO', 0),
+(13, 'chakir', 'qatab', 'javachakir@gmail.com', 'fc58a6548f0b07', 28274721),
+(14, 'Chakir', 'QATAB', 'theprince', 'fb55b15291071d9d41', 0),
+(15, 'mourad', 'qatab', 'qchakir@gmail.com', 'fc58a6548f0b07cc16', 28282920),
+(18, 'Chakir', 'Chakir', 'javachakir@gmail.com', 'fc58a6548f0b07', 0),
+(19, 'Chakir', 'Chakir', 'qatab@trixcorp.com', 'fc58a6548f0b07cc16', 28282920);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
