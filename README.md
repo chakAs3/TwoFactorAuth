@@ -2,7 +2,7 @@
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
 ### Front-end :
-i have used AngularJs 1.8.x (bootstrap) 
+i have used [AngularJs] 1.8.x (bootstrap) 
 ### Back-end : 
 [Nodejs] ( express ) , as  database i chosed MySql even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
 ### Automation :
@@ -49,8 +49,11 @@ Here's what the project structure looks like:
 in case  you have some missing libs you can run ‘npm install‘ to install them, i have set properly package.json:
 
 
-npm install 
+```sh
 
+$ npm install 
+
+```
 
 i have used bower for installing angularjs libs and other front-end libs 
 
@@ -60,15 +63,15 @@ Below I've included brief descriptions of the the workflow that have to do with 
 
 
 
-Description :
+# Description :
 
 
-public :  contains all front-end files .
-js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
-config.js : it contains database configuration ( username , password ,database , port )…. that should be changed in order to make the app working 
-server/routes.js : all the server side api functions and the communication with database.
-server/onetouch.js : to implement OneTouch in Two-Factor Authentication.
-user_database.txt : mysql database export 
+>public :  contains all front-end files .
+>js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
+>config.js : it contains database configuration ( username , password ,database , port )…. that should be changed in order to >make the app working 
+>server/routes.js : all the server side api functions and the communication with database.
+>server/onetouch.js : to implement OneTouch in Two-Factor Authentication.
+>user_database.txt : mysql database export 
 
 
 
@@ -76,7 +79,12 @@ user_database.txt : mysql database export
 
 
 the application can be built using the command :
-gulp build
+
+```sh
+
+$ gulp build
+
+```
 the application can be launch on the browser using :
 gulp serve
 i have added multilang  (AR , EN ) to support right-to-left and left-to-right languages using SASS and JSON file for each language , you can switch between languages in any view then the selected language will be injected .
