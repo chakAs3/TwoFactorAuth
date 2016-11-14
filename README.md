@@ -2,7 +2,7 @@
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
 ### Front-end :
-[AngularJS]:<http://angularjs.org> 1.8.x (bootstrap) 
+[AngularJS] :<http://angularjs.org> 1.8.x (bootstrap) 
 ### Back-end : 
 [Nodejs] 
 [express] 
@@ -21,22 +21,22 @@ How to add Two Factor Authy easily to your working platfrom , using Nodejs and A
 
 Here's what the project structure looks like: 
 * public
-* --css
-* --fonts
-* --js
-* --translations
-* --views
+* -- css
+* -- fonts
+* -- js
+* -- translations
+* -- views
 * server
-* --onetouch.js
-* --routes.js
+* -- onetouch.js
+* -- routes.js
 * src
-* --css
-* --sass
-* --fonts
-* --js
-* --scripts
-* --translations
-* --views
+* -- css
+* -- sass
+* -- fonts
+* -- js
+* -- scripts
+* -- translations
+* -- views
 * index.html
 * server.js
 * config.js
@@ -103,8 +103,8 @@ Sign-up form is created and accessible from login form
 - I create a table named ‘user’  contains all necessary fields for this test you find  user_database.txt  in the root folder 
 
 Sign-in form is created and accessible from different part :
--Validation and sanitisation 
--Checking username and password using same hash 
+- Validation and sanitisation 
+- Checking username and password using same hash 
 
 Two-factor Authentication to the sign-in using Authy (https://www.twilio.com/authy)
  automatically after check username and password correct app redirects user to  2FA form 
