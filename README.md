@@ -1,29 +1,33 @@
 # TwoFactorAuth
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
-Front-end : i have used AngularJs 1.8.x (bootstrap) 
-Back-end : Nodejs ( express ) , as  database i chosed MySql even though MongoDB was easier to integrate with NodeJs but i wanted to try NodeJS with relational database 
-Automation : Gulp is my favorite javascript task runner that lets me automate tasks like 
-Bundling and minifying libraries and stylesheets.
-Refreshing browser when i save files restart node server after modifying files.
-Quickly running unit tests 
-Running code analysis
-Less/Sass to CSS compilation , Helped me for multilang especially
-Copying modified files to an output directory ,i could separate my source folder for public folder , all files on public are  generated from src
+### Front-end :
+i have used AngularJs 1.8.x (bootstrap) 
+### Back-end : 
+[Nodejs] ( express ) , as  database i chosed MySql even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
+### Automation :
+[Gulp] is my favorite javascript task runner that lets me automate tasks like 
+
+* Bundling and minifying libraries and stylesheets.
+* Refreshing browser when i save files restart node server after modifying files.
+* Quickly running unit tests 
+* Running code analysis
+* Less/Sass to CSS compilation , Helped me for multilang especially
+* Copying modified files to an output directory ,i could separate my source folder for public folder , all files on public are  generated from src
  
 
 
 Here's what the project structure looks like: 
-public
+* public
    css
    fonts
    js
    translations
    views
-server
+* server
    onetouch.js
    routes.js
-src
+* src
    css
    sass
    fonts
@@ -31,11 +35,11 @@ src
    scripts
    translations
    views
-index.html
-server.js
-config.js
-gulpfile.js
-package.json
+* index.html
+* server.js
+* config.js
+* gulpfile.js
+* package.json
 
 
 
