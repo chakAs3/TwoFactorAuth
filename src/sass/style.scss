@@ -1,0 +1,18 @@
+body {
+  direction: $default-direction;
+  font-family: $font-family 
+}
+
+.column { float: $default-float; }
+
+.media-image { padding-#{$opposite-float}: 1rem; }
+
+.switcher {
+  position: absolute;
+  #{$opposite-float}: 20px;
+  top: 20px;
+}
+
+  .navbar-nav>li {
+    float: $default-float;
+}

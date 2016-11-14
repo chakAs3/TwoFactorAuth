@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="{{ lang }}" ng-app="Multilingual">
+<head>
+  <title>Test JadoPado</title>
+  <meta charset="utf-8">
+
+
+
+	<meta property="og:title" content="Test JadoPado" />
+	<meta property="og:image" content="img/livetogive-icone.jpg" />
+
+
+	<meta property="og:description" content=" ." />
+
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <link ng-href="css/{{ default_direction }}-app.css" rel="stylesheet">
+
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/app.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+<div id="wrapper" class="container wrapper" >
+
+
+  <div ng-controller="LanguageSwitchController" class="switcher">
+    <button ng-show="lang == 'en'" ng-click="changeLanguage('ar')" translate="BUTTON_LANG_AR"></button>
+    <button ng-show="lang == 'ar'" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+  </div>
+
+
+<div id="main" style="">
+    {{ message }}
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+     <div ng-view></div>
+</div>
+
+
+
+</body>
+</html>

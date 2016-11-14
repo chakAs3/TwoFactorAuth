@@ -1,0 +1,17 @@
+body {
+  direction: rtl;
+  font-family: GESS; }
+
+.column {
+  float: right; }
+
+.media-image {
+  padding-left: 1rem; }
+
+.switcher {
+  position: absolute;
+  left: 20px;
+  top: 20px; }
+
+.navbar-nav > li {
+  float: right; }

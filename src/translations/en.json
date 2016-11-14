@@ -1,0 +1,46 @@
+{
+  "LIKE_US":"LIKE US TO ENTER",
+  "HELLO": "This Ramadan, the Holy Month of Giving, let us join hands to enable brighter futures for the students of the Manar Al Eman Charity School.",
+  "BUTTON_LANG_AR": "العربية",
+  "BUTTON_LANG_EN": "الإنجليزية",
+  "HOME":"Home",
+
+
+  "WELCOME_MESSAGE": "Welcome to the AngularJS multilingual site",
+  "HOME_TEXT":"You are logged in succesfully",
+  "HOME_TEXT2":"All registered users",
+  "HI":"Hi",
+
+
+
+
+
+
+
+  "SIGNUP":"SIGNUP",
+
+  "NAME":"Name",
+  "USERNAME":"Username",
+  "USERNAME_REQUIRED":"Username is required",
+  "PASSWORD_REQUIRED":"Password is required",
+  "FIRSTNAME_REQUIRED":"Firstname is required",
+  "LASTNAME_REQUIRED":"Lastname is required",
+  "PASSWORD":"Password",
+
+  "FIRSTNAME":"Firstname",
+  "LASTNAME":"Lastname",
+
+  "NOT_VALID_EMAIL":"Not valid email",
+
+  "EMAIL":"Email",
+
+
+
+  "REQUIRED":"required",
+
+
+  "Thank You!":"Thank You!"
+
+
+
+}

@@ -1,0 +1,17 @@
+body {
+   color: black;
+
+}
+
+.switcher{
+  font-family: GESS;
+}
+.shadowed {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+@font-face {
+    font-family: GESS;
+    src: url(../fonts/ufonts.com_ge-ss-text-light-opentype.otf);
+}
