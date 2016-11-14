@@ -2,7 +2,7 @@
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
 ### Front-end :
-i have used [AngularJs] 1.8.x (bootstrap) 
+i have used [AngularJS]:<http://angularjs.org> 1.8.x (bootstrap) 
 ### Back-end : 
 [Nodejs] ( express ) , as  database i chosed MySql even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
 ### Automation :
@@ -19,22 +19,22 @@ i have used [AngularJs] 1.8.x (bootstrap)
 
 Here's what the project structure looks like: 
 * public
-   css
-   fonts
-   js
-   translations
-   views
+   *--css
+   *--fonts
+   *--js
+   *--translations
+   *--views
 * server
-   onetouch.js
-   routes.js
+   *--onetouch.js
+   *--routes.js
 * src
-   css
-   sass
-   fonts
-   js
-   scripts
-   translations
-   views
+   *--css
+   *--sass
+   *--fonts
+   *--js
+   *--scripts
+   *--translations
+   *--views
 * index.html
 * server.js
 * config.js
@@ -86,7 +86,11 @@ $ gulp build
 
 ```
 the application can be launch on the browser using :
-gulp serve
+```sh
+
+$ gulp serve
+
+```
 i have added multilang  (AR , EN ) to support right-to-left and left-to-right languages using SASS and JSON file for each language , you can switch between languages in any view then the selected language will be injected .
 
 
