@@ -68,7 +68,7 @@ Below I've included brief descriptions of the the workflow that have to do with 
 # Description :
 
 
->public :  contains all front-end files .
+>public  :  contains all front-end files .
 >js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
 >config.js : it contains database configuration ( username , password ,database , port )…. that should be changed in order to >make the app working 
 >server/routes.js : all the server side api functions and the communication with database.
@@ -87,7 +87,7 @@ the application can be built using the command :
 $ gulp build
 
 ```
-the application can be launch on the browser using :
+the application can be launched on the browser using :
 ```sh
 
 $ gulp serve
@@ -98,12 +98,14 @@ i have added multilang  (AR , EN ) to support right-to-left and left-to-right la
 
 Sign-up form is created and accessible from login form  
 - Validation is done using Angular  and sanitisation using angular-sanitise module on the front-end to escape rendering no Trusted HTML tag , on the back-end i used sanitize node module .
-- checking if the user existing and show error message
-- passwords are hashed using ‘crypto’ node module , using a simple algorithm 
-- i create a table named ‘user’  contains all necessary fields for this test you find  user_database.txt  in the root folder 
+- Checking if the user is already existing and show error message
+- Passwords are hashed using ‘crypto’ node module , using a simple algorithm 
+- I create a table named ‘user’  contains all necessary fields for this test you find  user_database.txt  in the root folder 
+
 Sign-in form is created and accessible from different part :
-Validation and sanitisation 
-Check username and password using same hash 
+-Validation and sanitisation 
+-Checking username and password using same hash 
+
 Two-factor Authentication to the sign-in using Authy (https://www.twilio.com/authy)
  automatically after check username and password correct app redirects user to  2FA form 
 with 2 options of Authentication , if Two-factor Authentication not yet enabled for the specific user ,thus will have to send country code , phone number , and email to subscribe to Authy then he will be redirected
