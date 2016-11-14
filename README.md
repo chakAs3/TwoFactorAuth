@@ -2,9 +2,11 @@
 How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
 
 ### Front-end :
-i have used [AngularJS]:<http://angularjs.org> 1.8.x (bootstrap) 
+[AngularJS]:<http://angularjs.org> 1.8.x (bootstrap) 
 ### Back-end : 
-[Nodejs] ( express ) , as  database i chosed MySql even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
+[Nodejs] 
+[express] 
+[MySql] even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database 
 ### Automation :
 [Gulp] is my favorite javascript task runner that lets me automate tasks like 
 
@@ -19,22 +21,22 @@ i have used [AngularJS]:<http://angularjs.org> 1.8.x (bootstrap)
 
 Here's what the project structure looks like: 
 * public
-   *--css
-   *--fonts
-   *--js
-   *--translations
-   *--views
+* --css
+* --fonts
+* --js
+* --translations
+* --views
 * server
-   *--onetouch.js
-   *--routes.js
+* --onetouch.js
+* --routes.js
 * src
-   *--css
-   *--sass
-   *--fonts
-   *--js
-   *--scripts
-   *--translations
-   *--views
+* --css
+* --sass
+* --fonts
+* --js
+* --scripts
+* --translations
+* --views
 * index.html
 * server.js
 * config.js
