@@ -68,12 +68,12 @@ Below I've included brief descriptions of the the workflow that have to do with 
 # Description :
 
 
->. public  :  contains all front-end files 
->. js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
->. config.js : it contains database configuration ( username , password ,database , port ) that should be changed in order to   make the app working 
->. server/routes.js : all the server side api functions and the communication with database
->. server/onetouch.js : to implement OneTouch in Two-Factor Authentication
->. user_database.txt : mysql database export 
+- public  :  contains all front-end files 
+- js/app.js : contains all business code , controllers , services ,and calls to RESTful api  
+- config.js : it contains database configuration ( username , password ,database , port ) that should be changed in order to   make the app working 
+- server/routes.js : all the server side api functions and the communication with database
+- server/onetouch.js : to implement OneTouch in Two-Factor Authentication
+- user_database.txt : mysql database export 
 
 
 
