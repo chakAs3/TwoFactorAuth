@@ -2,6 +2,7 @@ var config = require('../config');
 var bodyParser = require('body-parser');
 var onetouch = require('./onetouch');
 var sanitizer = require('sanitize')();
+
 // crypt using crypto //////////////
 var crypto = require('crypto'),
     algorithm = 'aes-256-ctr',
@@ -25,11 +26,17 @@ function decrypt(text){
 var authy = require('authy')(config.authyApiKey);
 
 var poolconnect ;
-module.exports = function (app,pool) {
+var mysocket;
+module.exports = function (app,pool,server) {
 
-    // api ---------------------------------------------------------------------
+
     // set database pool
     poolconnect = pool ;
+    initSocket(server);
+
+    // api ---------------------------------------------------------------------
+
+
     // get all users
     app.get('/api/users', function (req, res) {
         // use mysql to get all users in the database
@@ -104,7 +111,7 @@ module.exports = function (app,pool) {
           });
 
 
-           
+
 
           connection.on('error', function(err) {
                 res.json({"code" : 100, "status" : "Error in connection database"});
@@ -116,6 +123,9 @@ module.exports = function (app,pool) {
 
     // Check username & password  ( LOGIN )
     app.get('/api/user', function (req, res) {
+      // test socket on login
+
+
 
         // create a user, information comes from AJAX request from Angular
         var objectParam = req.query;
@@ -136,7 +146,9 @@ module.exports = function (app,pool) {
           connection.query("SELECT * FROM `user`	 WHERE `username`='"+username+"' and `password`='"+hash_password+"' ",function(err,rows){
           connection.release();
               if(!err) {
+                  console.log(" mysocket "+mysocket);
                   res.json(rows);
+
 
               }
           });
@@ -173,6 +185,9 @@ module.exports = function (app,pool) {
 
       var objectParam = req.query;
 
+      console.log("1 mysocket "+mysocket);
+
+
       authy.verify(objectParam.authy_id, objectParam.token, function (err, resquest) {
          if(err)
          console.log(err);
@@ -203,7 +218,20 @@ module.exports = function (app,pool) {
     });
 
     // The webhook that Authy will call on a OneTouch event
-    app.post('/authy/callback', bodyParser.json(), function(request, response, next){}, function(request, response){ console.log(" authyCallback ");});
+    app.post('/authy/callback', function(request, response){
+
+
+       console.log(" authyCallback ");
+       var authyId = request.body.authy_id;
+       var uuid = request.body.uuid ;
+       var status = approval_request.transaction.status
+
+       if(mysocket)
+       mysocket.emit("onetouch",{uuid:uuid,status:status});
+
+
+       response.end();
+    });
 
 
 
@@ -222,6 +250,8 @@ module.exports = function (app,pool) {
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
+
+
 };
 
 
@@ -275,4 +305,19 @@ function sendOneTouch(user,cb){
      response.end();
  };
 
+}
+
+
+function initSocket(server){
+    var io = require('socket.io').listen(server);
+    console.log(" initSocket...... ");
+
+    io.on('connection', function (socket) {
+      mysocket = socket ;
+      console.log(" socketstarts ");
+      socket.emit('socketstart', { hello: 'world' });
+      socket.on('my other event', function (data) {
+       //  console.log(data);
+      });
+    });
 }

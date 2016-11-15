@@ -13,6 +13,8 @@ gulp.task('js', function(){
     './bower_components/angular-translate/angular-translate.js',
     './bower_components/angular-cookies/angular-cookies.js',
     './bower_components/angular-sanitize/angular-sanitize.js',
+    './bower_components/socket.io-client/socket.io.js',
+    './bower_components/angular-socket-io/socket.js',
     './bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
 
     './src/js/app.js'])

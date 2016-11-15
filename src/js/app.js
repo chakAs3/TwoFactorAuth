@@ -1,4 +1,4 @@
-var app = angular.module('Multilingual', ['pascalprecht.translate','ngRoute','ngCookies','ngSanitize' ]);//i use ngSanitize to sanitize user input in case of rendering it
+var app = angular.module('Multilingual', ['pascalprecht.translate','ngRoute','ngCookies','ngSanitize','btford.socket-io' ]);//i use ngSanitize to sanitize user input in case of rendering it
 
 
 
@@ -56,13 +56,13 @@ app.controller('MainController', ['$scope','$http',function($scope,$http) {
       .then(function (response) {
 
          $scope.allUsers = response.data ;
-          
+
       });
 
 }]);
 
 
-app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$cookieStore', function($rootScope,$scope,$http,$location,$cookieStore) {
+app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$cookieStore','socket','$timeout', function($rootScope,$scope,$http,$location,$cookieStore,socket,$timeout) {
 
          // init user authy id from globals (cookieStore)
         $scope.user_authy_id = $rootScope.globals.currentUser.authy_id ;
@@ -104,6 +104,7 @@ app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$c
 
         function sendOneTouch(user){
           $scope.dataLoading=true;
+          $scope.waitingApproval = true ;
           $http.get('/api/onetouch_authy',{params: { authy_id:$rootScope.globals.currentUser.authy_id,email: $rootScope.globals.currentUser.username }})
               .then(function (response) {
 
@@ -119,6 +120,22 @@ app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$c
 
               });
         }
+        //Listen OneTouch socket
+        socket.on('onetouch', function (data) {
+              //alert("onetouch socket message "+data);
+              $scope.waitingApproval = false ;
+              if(data.status == 'approved' ) {
+
+                $rootScope.globals.currentUser.isvalid = true;
+                $cookieStore.put('globals', $rootScope.globals);
+                $scope.onetouchApproved = true;
+                $timeout(function () { // redirect to home and logged in the user
+                    $location.path('/home');
+                }, 2000);
+              }else{
+                $scope.onetouchDenied = true;
+              }
+         });
 
 }]);
 
@@ -148,7 +165,7 @@ app.controller('SignupController', ['$scope','$http','$location', function($scop
 }]);
 
 // Controller for the login
-app.controller('LoginController', ['$rootScope','$scope','$http','$cookieStore','$location', function($rootScope,$scope,$http,$cookieStore ,$location) {
+app.controller('LoginController', ['$rootScope','$scope','$http','$cookieStore','$location','socket', function($rootScope,$scope,$http,$cookieStore ,$location, socket) {
 
        $scope.login = function(){
 
@@ -211,6 +228,20 @@ app.controller('LoginController', ['$rootScope','$scope','$http','$cookieStore',
 
 
 
+}]);
+
+
+//Service to interact with the socket library
+app.factory('socket',['socketFactory', function (socketFactory) {
+
+    var serverBaseUrl ='';
+    var myIoSocket = io.connect(serverBaseUrl);
+
+    var socket = socketFactory({
+        ioSocket: myIoSocket
+    });
+
+    return socket;
 }]);
 
 

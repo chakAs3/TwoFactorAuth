@@ -45,12 +45,14 @@ app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
 app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
 
-
+var server = require('http').Server(app);
 // routes ======================================================================
-require('./server/routes.js')(app,pool);
+require('./server/routes.js')(app,pool,server);
 
 
 
 // listen (start app with node server.js) ======================================
-app.listen(port);
+
+server.listen(port);
+//app.listen(port);
 console.log("App listening on port " + port);
