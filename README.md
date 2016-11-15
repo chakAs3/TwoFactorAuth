@@ -114,7 +114,7 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 
 - Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  , but i’m not able to receive the User Approval or Deny since  my App is not public and accessible online , i have to host it then config my Twilio Authy Account to Set the app URL  .
 
-i have recently host it on openshift , this the link to test online <http://twofactor-jotun.rhcloud.com/>
+i have recently hosted it on openshift , this the link to test online <http://twofactor-jotun.rhcloud.com/>
 
 
 Thank You for the test it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
