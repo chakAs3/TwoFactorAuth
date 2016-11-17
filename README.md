@@ -114,8 +114,8 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 
 - Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  ,  Authy send notification one User approves to denies to /authy/callback  on my app with status = (approved/denied) the using socket and send notification to Font-End  .
 
-i have hosted the app on openshift , this the link to test online <http://twofactor-jotun.rhcloud.com/>
+I have hosted the app on openshift ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
 
 
-Thank You for the test it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
+Thank You, it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
 Please let me know if you deployed the app or there is any issue, i would like that you could test it .

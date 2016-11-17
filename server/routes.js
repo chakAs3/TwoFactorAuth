@@ -62,7 +62,7 @@ module.exports = function (app,pool,server) {
       });
     });
 
-    // create user
+    // create new user
     app.post('/api/users', function (req, res) {
 
         // create a user, information comes from AJAX request from Angular
@@ -85,10 +85,11 @@ module.exports = function (app,pool,server) {
             res.json({"code" : 100, "status" : "Error in connection database"});
             return;
           }
-          // encrypt password before saving it in DB
 
+          // encrypt password before saving it in DB
           var hash_password = encrypt(user.password);
-          //console.log(hash_password);
+
+
 
           connection.query("select * from `user` where `username`='"+username+"'",function(err,rows){
             //  connection.release();
@@ -109,9 +110,6 @@ module.exports = function (app,pool,server) {
               });
 
           });
-
-
-
 
           connection.on('error', function(err) {
                 res.json({"code" : 100, "status" : "Error in connection database"});
@@ -161,7 +159,8 @@ module.exports = function (app,pool,server) {
 
        return;
     });
-    // Enable Two-Factor Authentication by adding user to Auth and get ID
+
+    // Enable Two-Factor Authentication by adding user to Auth and get AUTHY_ID
     app.get('/api/adduser_authy',function (req, res) {
 
         // create a user, information comes from AJAX request from Angular
