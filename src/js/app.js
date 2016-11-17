@@ -91,6 +91,8 @@ app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$c
                      $rootScope.globals.currentUser.isvalid = true;
                      $cookieStore.put('globals', $rootScope.globals);
                      $location.path('/home');
+                   }else{
+                     $scope.tokenText= "Invalid Token";
                    }
                    $scope.dataLoading=false;
 
@@ -122,7 +124,7 @@ app.controller('TwoFAController', ['$rootScope','$scope','$http','$location','$c
         }
         //Listen OneTouch socket
         socket.on('onetouch', function (data) {
-              //alert("onetouch socket message "+data);
+              //alert("onetouch socket message "+JSON.stringify(data));
               $scope.waitingApproval = false ;
               if(data.status == 'approved' ) {
 

@@ -9,6 +9,27 @@ body {
 .shadowed {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+ 
+
+.multbg-top-to-bottom {
+  border-top: 3px solid #65BC48;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#65BC48), to(#DA3C45));
+  background-image: -webkit-linear-gradient(#65BC48, #DA3C45);
+  background-image:
+      -moz-linear-gradient(#65BC48, #DA3C45),
+      -moz-linear-gradient(#65BC48, #DA3C45);
+  background-image:
+      -o-linear-gradient(#65BC48, #DA3C45),
+      -o-linear-gradient(#65BC48, #DA3C45);
+  background-image:
+      linear-gradient(#65BC48, #DA3C45),
+      linear-gradient(#65BC48, #DA3C45);
+  -moz-background-size: 3px 100%;
+  background-size: 3px 100%;
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+  border-bottom: 3px solid #DA3C45;
+}
 
 
 @font-face {

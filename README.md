@@ -57,7 +57,7 @@ $ npm install
 
 ```
 
-i have used bower for installing angularjs libs and other front-end libs
+i have used bower for installing Angularjs libs and other front-end libs
 
 
 Below I've included brief descriptions of the the workflow that have to do with user registration and authentication .
@@ -112,9 +112,9 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 - Authentication via SoftToken from Authy App :  form to perform Token Verification  
 
 
-- Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  , but i’m not able to receive the User Approval or Deny since  my App is not public and accessible online , i have to host it then config my Twilio Authy Account to Set the app URL  .
+- Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  ,  Authy send notification one User approves to denies to /authy/callback  on my app with status = (approved/denied) the using socket and send notification to Font-End  .
 
-i have recently hosted it on openshift , this the link to test online <http://twofactor-jotun.rhcloud.com/>
+i have hosted the app on openshift , this the link to test online <http://twofactor-jotun.rhcloud.com/>
 
 
 Thank You for the test it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication

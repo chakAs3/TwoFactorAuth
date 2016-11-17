@@ -4,10 +4,10 @@
   <title>Test JadoPado</title>
   <meta charset="utf-8">
 
-
+  <link rel="icon" type="image/png" href="https://uae.jadopado.com/favicon-32x32.png" sizes="32x32">
 
 	<meta property="og:title" content="Test JadoPado" />
-	<meta property="og:image" content="img/livetogive-icone.jpg" />
+	<meta property="og:image" content="https://uae.jadopado.com/favicon-32x32.png" />
 
 
 	<meta property="og:description" content=" ." />
@@ -19,10 +19,16 @@
 
 
 
+
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
   <script src="js/app.min.js"></script>
+
+
+  <link href="https://www.authy.com/form.authy.min.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="https://www.authy.com/form.authy.min.js" type="text/javascript"></script>
+
 
 
 
@@ -41,7 +47,8 @@
     <button ng-show="lang == 'ar'" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
   </div>
 
-
+<div class="text-center"><a id="jp_header_logo" href="/" title="Either do it really well, or don't" rel="">&nbsp;</a>
+<div style="font-size:10px;margin-bottom:10px" translate="TECHNICAL_TEST" ></div></div>
 <div id="main" style="">
     {{ message }}
     <!-- angular templating -->

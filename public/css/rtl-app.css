@@ -15,3 +15,13 @@ body {
 
 .navbar-nav > li {
   float: right; }
+
+#jp_header_logo {
+  background-image: url(https://uae.jadopado.com/resources/images/JadoPado-Logo-ar@2x.png);
+  background-size: 180px;
+  background-position: 25px 6px;
+  height: 50px;
+  width: 210px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle; }
