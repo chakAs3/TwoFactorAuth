@@ -118,7 +118,7 @@ I have hosted the app on openshift ,  the link to try it online <http://twofacto
 
 ## Extra : Implementation of InstantSearch
 
-I have just implemented in fast way a simple InstantSearch Algolia , to fetch JadoPado Products .
+I have just implemented in fast way a simple Algolia InstantSearch  , to fetch JadoPado Products .
 
 
 Thank You, it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
