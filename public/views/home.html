@@ -3,8 +3,47 @@
 
        <h1>{{ "HI" | translate }} {{$root.globals.currentUser.fullname}}!</h1>
        <h3>{{ "HOME_TEXT" | translate }}</h3>
-       <p>{{ "HOME_TEXT2" | translate }}:</p>
 
+
+
+       <div id="search-wrapper">
+           <label for="username">JadoPado Search :</label>
+          <input type="text" id='search' class='jp-search_field' placeholder="What are you looking for?" ng-model='search.query' />
+
+          <br>
+          <div class="row" ><div class='col-md-10'> {{search.nbHits}} results matching "{{search.query}}" </div> </div>
+          <br>
+          <div class="row" >
+           <div class="col-md-3" ng-repeat="obj in search.hits">
+             <div class="list_highlight_pdt widget_pdt">
+                  <div class="list_highlight_pdt_img">
+                            <a href="https://uae.jadopado.com/product/{{obj.sku}}/{{obj.url_name}}/" title="{{obj.name}}" class="product_image_link" tabindex="0">
+                              <img ng-src="https://jadopado-res-1.cloudinary.com/image/upload/t_thumb_170/{{obj.disk_name}}?v=47"   alt="" width="95"></a>
+
+                  </div>
+                  <a href="https://uae.jadopado.com//product/{{obj.sku}}/{{obj.url_name}}/351574" title="Lenovo Y900 80MK, 13.3 inch QHD Full Touch, 6th Gen Intel Core i7 6500U, 8GB, 256GB SSD (Solid State Drive) Hard Disk, Win 10" class="product_image_link" tabindex="0">
+                    <div class="list_highlight_pdt_name">{{obj.name}}</div></a>
+                    <div class="highlight_pdt_price highlight_sale_price">AED {{obj.price}}</div>
+          </div>
+           </div>
+         </div>
+
+        <div class="text-center">
+          <div class="pagination pagination-lg">
+               <button ng-disabled="search.page == 0" class='btn btn-info' ng-click="search.page=search.page-1">
+                   Previous
+               </button>
+               {{search.page+1}}/{{search.nbPages}}
+               <button ng-disabled="search.page >= search.nbPages" class='btn btn-info' ng-click="search.page=search.page+1">
+                   Next
+               </button>
+
+          </div>
+      </div>
+       </div>
+
+       <p>&nbsp;</p>
+       <p>{{ "HOME_TEXT2" | translate }}:</p>
        <table class="table">
          <thead>
            <tr>
@@ -22,7 +61,5 @@
 
          </tbody>
        </table>
-
-       <p>&nbsp;</p>
        <p><a href="#/login" class="btn btn-primary">{{ "LOGOUT" | translate }}</a></p>
 </div>

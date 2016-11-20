@@ -116,6 +116,10 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 
 I have hosted the app on openshift ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
 
+## Extra : Implementation of InstantSearch
+
+I have just implemented in fast way a simple InstantSearch Algolia , to fetch JadoPado Products .
+
 
 Thank You, it is was fun to integrate Two-factor Auth it is really super easy to implement and very interesting as solution to secure user Authentication
 Please let me know if you deployed the app or there is any issue, i would like that you could test it .
