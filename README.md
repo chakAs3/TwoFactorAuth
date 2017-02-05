@@ -3,9 +3,9 @@ How to add Two Factor Authentication easily to your working platfrom , using Nod
 A handy Module to be implemented in any web application to add a second layer of auth security .
 
 ### Front-end :
-[AngularJS] :<http://angularjs.org> 1.8.x (bootstrap)
+[AngularJS] ![alt tag](https://angularjs.org/img/AngularJS-small.png) :<http://angularjs.org> 1.8.x (bootstrap)
 ### Back-end :
-[Nodejs]
+[Nodejs]![alt tag](https://angularjs.org/img/AngularJS-small.png)
 [express]
 [MySql] even though [MongoDB] was easier to integrate with NodeJs but i wanted to try [Nodejs] with relational database
 ### Automation :
@@ -115,7 +115,7 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 
 - Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  ,  Authy send notification one User approves to denies to /authy/callback  on my app with status = (approved/denied) the using socket and send notification to Font-End  .
 
-I have hosted the app on openshift ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
+[![Deploy to Openshift](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy) ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
 
 ## Extra : Implementation of InstantSearch
 
