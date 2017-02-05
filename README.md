@@ -115,7 +115,7 @@ with 2 options of Authentication , if Two-factor Authentication not yet enabled 
 
 - Authentication using Authy OneTouch : the App sends a OneTouch request to user via Authy and receives an UUID approval  ,  Authy send notification one User approves to denies to /authy/callback  on my app with status = (approved/denied) the using socket and send notification to Font-End  .
 
-[![alt tag](https://www.openshift.com//content/subdomain/openshift-logo-horizontal.svg)](http://twofactor-jotun.rhcloud.com/) ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
+App deployed to [![alt tag](https://www.openshift.com//content/subdomain/openshift-logo-horizontal.svg)](http://twofactor-jotun.rhcloud.com/) ,  the link to try it online <http://twofactor-jotun.rhcloud.com/>
 
 ## Extra : Implementation of InstantSearch
 
