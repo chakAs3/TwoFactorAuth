@@ -1,5 +1,6 @@
 # TwoFactorAuth
-How to add Two Factor Authy easily to your working platfrom , using Nodejs and Angulajs
+How to add Two Factor Authentication easily to your working platfrom , using Nodejs and Angulajs.
+A handy Module to be implemented in any web application to add a second layer of auth security .
 
 ### Front-end :
 [AngularJS] :<http://angularjs.org> 1.8.x (bootstrap)
